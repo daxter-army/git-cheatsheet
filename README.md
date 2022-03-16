@@ -31,5 +31,5 @@
 * **.gitignore:** Ignore files and dirs/ in your repository.
 
 ### FAQs
-**What is inside **.git** folder?**
-* It contains dirs like config, description, HEAD, hooks etc, contains everything from log files to remote address, which helps git to work.
+**What is inside *.git* folder?**
+It contains dirs like config, description, HEAD, hooks etc, contains everything from log files to remote address, which helps git to work.
