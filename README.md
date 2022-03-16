@@ -30,6 +30,6 @@
 * ```git commit --amend --no-edit```: ammend the previous commit, with the earlier message.
 * **.gitignore:** Ignore files and dirs/ in your repository.
 
-**FAQs**
-### What is inside **.git** folder?
+### FAQs
+***What is inside **.git** folder?**
 * It contains dirs like config, description, HEAD, hooks etc, contains everything from log files to remote address, which helps git to work.
