@@ -1,5 +1,5 @@
 # git-cheatsheet
-**repository -** It is a workspace, which tracks changes, and manage files within the directory.
+* **repository -** It is a workspace, which tracks changes, and manage files within the directory.
 
 ## 0. git config
 * Check already set git user (if any):
