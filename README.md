@@ -51,7 +51,7 @@
 
 
 * ```git branch``` : shows all the branches in the project.
-* ```git branch <branch_name>``` : create a new branch with the specified name ,based upon the current **HEAD**.
+* ```git branch <branch_name>``` : create a new branch with the specified name, based upon the current **HEAD**.
 
 **Branch name cannot contain spaces!**
 
