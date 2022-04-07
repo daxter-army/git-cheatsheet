@@ -43,6 +43,10 @@
 
 **As of now, default branch was renamed from master to main in Github, but it is still master in Git.***
 
+<p align='center'>
+<img src="./branches3.svg" alt="branches"/>
+</p>
+
 **Git HEAD:** It is a pointer, which tells us our current position, on which commit we are.
 **Branch HEAD** It points to the branches in the git tree, where we left off at the latest commit. It serves as references when we want to merge/checkout branches.
 * ``````
