@@ -33,6 +33,7 @@
 <p align='center'>
 <img src="./branches.svg" alt="branches"/>
 </p>
+
 **Branches:** It allows you to create multiple timelines of your project, upon which work can be done, while unaffecting the others, which can be merged in future.
 * We can make/break stuff, and that's how features are built in large companies project.
 
