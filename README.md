@@ -37,7 +37,14 @@
 **Branches:** It allows you to create multiple timelines of your project, upon which work can be done, while unaffecting the others, which can be merged in future.
 * We can make/break stuff, and that's how features are built in large companies project.
 
-**Git HEAD:** 
+<p align='center'>
+<img src="./branches2.svg" alt="branches"/>
+</p>
+
+**As of now, default branch was renamed from master to main in Github, but it is still master in Git.***
+
+**Git HEAD:** It is a pointer, which tells us our current position, on which commit we are.
+**Branch HEAD** It points to the branches in the git tree, where we left off at the latest commit. It serves as references when we want to merge/checkout branches.
 * ``````
 
 ### FAQs
