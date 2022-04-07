@@ -28,8 +28,17 @@
 * ```git log --oneline``` : short and concise commit messages.
 * ```git commit --amend -m```: ammend the previous commit, with a new message
 * ```git commit --amend --no-edit```: ammend the previous commit, with the earlier message.
-* **.gitignore:** Ignore files and dirs/ in your repository.
+
+## 3. branches
+**Branches:** It allows you to create multiple timelines of your project, upon which work can be done, while unaffecting the others, which can be merged in future.
+* We can make/break stuff, and that's how features are built in large companies project.
+
+**Git HEAD:** 
+* ``````
 
 ### FAQs
 **What is inside *.git* folder?**
 * It contains dirs like config, description, HEAD, hooks etc, contains everything from log files to remote address, which helps git to work.
+
+**Why to use .gitignore?**
+* Ignore files and dirs/ in your repository.
