@@ -72,10 +72,17 @@
 
 * ```git branch -d <branch_name>```: delete a branch
 **To delete a branch, you must be checked out of it.**
+
 * ```git branch -D <branch_name>```: when you try to delete a branch, git checks if you have merged this branch or not, so if the branch is not merged, git will give you error saying ```error: The branch <branch_name> is not fully merged```, so to delete forcefully a branch irrespective of its merged status, use ```-D``` which is a shorthand for ```--delete --force```.
 
 * ```git branch -m <new_branch_name>```: rename a branch
 **To rename a branch, you must be checked in it.**
+
+**HOW GIT STORES HEAD AND OTHER BRANCHES**
+* In the **.git** directory, **HEAD** file store the current HEAD location, for e.g, if you are currently in the master branch, file would be having **ref: refs/head/master** written in it. This is the **HEAD POINTER**.
+
+* In the **.git/refs/head**, there would as many files as the number of branches you are having in your 
+project, and each file would be containing the last commit hash of the last commit done in that branch. These are the **branch references or Branch HEAD**.**HEAD** alternates between these branch heads, when you do checkout/switch from one branch to another.
 
 ### FAQs
 **What is inside *.git* folder?**
