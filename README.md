@@ -93,11 +93,18 @@ In the merging,
 * There are several types of merges, let us study the most basic merge i.e **Fast-Forward Merge**.
 
 #### Fast-Forward Merge
-In this type of merge, we merge branches, where one branch is just an extension of another (parent) branch. Where the structure is like this:
+In this type of merge, we merge branches, where one branch is just an extension of another (parent) branch, where the parent branch (or the branch in which you want your changes to be introduced, is having no commits after, swithing into the new branch, which is to be merged with the other branch).
 
+**SCENARIO**
 
+* So let's assume, we just finished work on our new branch, and we want the ```new_ui``` to be merged in the master/main branch. So now our git structure is like this.
+<img src="./merge1.svg" />
 
-* ```git merge``` : 
+* Because we want our changes in the main/master branch, so lets switch into masin/master by hitting ```git switch main``` or ```git checkout main```. After doing this, our HEAD location is like this.
+<img src="./merge2.svg" />
+
+* And now the final step, ```git merge new_ui```, after which git structure is like this.
+<img src="./merge3.svg" />
 
 ### FAQs
 **What is inside *.git* folder?**
