@@ -32,23 +32,23 @@
 
 ## 3. branches
 <p align='center'>
-<img src="./branches.svg" alt="branches"/>
+<img src="./branches.svg" alt="branches" width="70%"/>
 </p>
 
 **Branches:** It allows you to create multiple timelines of your project, upon which work can be done, while unaffecting the others, which can be merged in future.
 * We can make/break stuff, and that's how features are built in large companies project.
 
 <p align='center'>
-<img src="./branches2.svg" alt="branches"/>
+<img src="./branches2.svg" alt="branches" width="70%"/>
 </p>
 
 **As of now, default branch was renamed from master to main in Github, but it is still master in Git.**
 
 **Git HEAD:** It is a pointer, which tells us our current position, on which commit we are.
 **Branch HEAD** It points to the branches in the git tree, where we left off at the latest commit. It serves as references when we want to merge/checkout branches.
-
-<img src="./git_head_and_branch_head.gif" alt="branches"/>
-
+<p align='center'>
+<img src="./git_head_and_branch_head.gif" alt="branches" width="60%"/>
+</p>
 
 * ```git branch``` : shows all the branches in the project.
 * ```git branch <branch_name>``` : create a new branch with the specified name, based upon the current **HEAD**.
@@ -96,15 +96,32 @@ In the merging,
 In this type of merge, we merge branches, where one branch is just an extension of another (parent) branch, where the parent branch (or the branch in which you want your changes to be introduced, is having no commits after, swithing into the new branch, which is to be merged with the other branch).
 
 **SCENARIO**
-
 * So let's assume, we just finished work on our new branch, and we want the ```new_ui``` to be merged in the master/main branch. So now our git structure is like this.
-<img src="./merge1.svg" />
+<p align='center'><img src="./merge1.svg" width="50%" /></p>
 
 * Because we want our changes in the main/master branch, so lets switch into masin/master by hitting ```git switch main``` or ```git checkout main```. After doing this, our HEAD location is like this.
-<img src="./merge2.svg" />
+<p align='center'><img src="./merge2.svg" width="50%"/></p>
 
 * And now the final step, ```git merge new_ui```, after which git structure is like this.
-<img src="./merge3.svg" />
+<p align='center'><img src="./merge3.svg" width="50%"/></p>
+
+#### Merge Commit (The most common in larger companies)
+* In this git create a new commit for us, we need to give message with -m flag or git will wait for you to enter the message in the VS code editor.
+
+**SCENARIO**
+* So let's assume, we just finished work on our new branch, and we want the ```new_ui``` to be merged in the master/main branch. So now our git structure is like this.
+<p align='center'><img src="./merge1.svg" width="50%"/></p>
+
+* But the ```main/master``` branch has another commits that, our ```new_ui``` is unaware and ```new_ui``` has commits that ```main/master``` is unaware of.
+<p align='center'><img src="./merge4.svg" width="50%"/></p>
+
+* So here, we will use ```git merge new_ui -m "merge commit message"``` or only ```git merge new_ui``` and git will open the code editor for us to enter commit message, and after this a new commit is made which consists of both the changes from our both the branches.
+<p align='center'><img src="./merge5.svg" width="50%"/></p>
+
+**CONFLICT in Merge Commits**
+* If you encoutner any conflicts in merge commits, then go the conflicted file and edit is as per your need, whether you want to keep the changes from the current branch, or the other branch or want to keep the content from both the branches. Then after editting, make a commit with ```git commit -am "merge commit message"``` and git will create a new commit, with the merged content.
+
+## 5. Comparing changes with Git Diff
 
 ### FAQs
 **What is inside *.git* folder?**
