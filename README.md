@@ -84,6 +84,21 @@
 * In the **.git/refs/head**, there would as many files as the number of branches you are having in your 
 project, and each file would be containing the last commit hash of the last commit done in that branch. These are the **branch references or Branch HEAD**.**HEAD** alternates between these branch heads, when you do checkout/switch from one branch to another.
 
+## 4. merging branches
+In the merging,
+  * **We merge branches, not specific commits**,
+  * **We always merge to the current HEAD**, i.e We switch into the branch which needs to recieve changes, and then run the merge procedure from there.
+  * After merging, the branch which was merged into another branch, is not deleted. It stays put, and you can delete/continue or can do whatever you want to do with it.
+
+* There are several types of merges, let us study the most basic merge i.e **Fast-Forward Merge**.
+
+#### Fast-Forward Merge
+In this type of merge, we merge branches, where one branch is just an extension of another (parent) branch. Where the structure is like this:
+
+
+
+* ```git merge``` : 
+
 ### FAQs
 **What is inside *.git* folder?**
 * It contains dirs like config, description, HEAD, hooks etc, contains everything from log files to remote address, which helps git to work.
