@@ -189,8 +189,13 @@ blue
 <p align='center'>
 <img src="./git_head_and_branch_head.gif" alt="branches" width="60%"/>
 </p>
+
+
 * In ideal cases, the HEAD pointer never points to a commit, but when it does, then that state is called **Detached HEAD state**.
-* 
+<p align='center'>
+<img src="./detached_head" alt="branches" width="60%"/>
+</p>
+
 
 **Some devs think that checkout command is overloaded, that'swhy we have ```git reset```, ```git revert```, ```git switch```, which we can also perform with ```git checkout```
 
