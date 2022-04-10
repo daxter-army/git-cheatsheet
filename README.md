@@ -152,9 +152,47 @@ blue
 * ```git diff HEAD <file_name>```: It lists out the changes of a specific file since the last commit
 * ```git diff --staged <file_name>```: It lists out the changes of a specific file from the staging area.
 
-* ```git diff <branch_1> <branch_2>: Differentiates between the tips of the branch1 and branch2.
+* ```git diff <branch_1> <branch_2>``` or ```git diff <branch_1>..<branch_2>```: Differentiates between the tips of the branch1 and branch2.
 
+* ```git diff <commit_hash_1> <commit_hash_2>``` or ```git diff <commit_hash_1>..<commit_hash_2>```: Differentiates between 2 different commits.
 
+## 5. Git Stash
+* Git Stash lets you save your code in the git without making any commits.
+
+**SCENARIO:**
+* You commited your code in the **master** branch with **cat.py** file in it. Now you created a new branch named **dog** and created **dog.py** in it. But now for some reason, you are required to go back to **master** branch, but you dont wan't to commit in your **dog** branch now. So what happens?
+
+ * NO CONFLICTING CHANGES: If you are having non-conflicting changes, your changes are gonna come with you in the destination branch.
+ * CONFLICTING CHANGES: Git will give you error. It will say either commit your code or stash it.
+
+* ```git stash``` or ```git stash save <message>```: It will take all your uncommitted changes (staged and unstaged) and stash them, reverting the changes in your working dir, to the previous commit.
+
+* ```git stash pop```: Pop out the most recent stash, and re-apply the code changes in the working directory. **It removes the stashed code from the git stash memory.**
+
+* ```git stash apply```: It re-applies the code in the same way as the git stash does, **but the stashed code is also present in the git stash.**
+
+* ```git stash list```: List out all the stashes in the git stack of stashes.
+
+* ```git stash apply stash@{*id*}```: Apply the specific stash in your code.
+
+* ```git stash drop stash@{*id*}```: Drop/Delete particular stash from the stack of stashes. Comes in handy, when you are using git stash apply.
+
+* ```git stash clear```: clear the stack of stashes completely.
+
+## 6. Undoing changes and Time Travelling
+
+#### Going back to a specific commit
+* ```git checkout <commit_hash>```: It is equivalent to time travelling, we are jumping back to that state of code. Git log is also restored with respect to that timeline, but this also results in **DETACHED HEAD**.
+
+#### What is DETACHED HEAD ?
+* So normally what happens, the HEAD pointer refers to a branch pointer, and the branch pointer is refering to a specific commit.
+<p align='center'>
+<img src="./git_head_and_branch_head.gif" alt="branches" width="60%"/>
+</p>
+* In ideal cases, the HEAD pointer never points to a commit, but when it does, then that state is called **Detached HEAD state**.
+* 
+
+**Some devs think that checkout command is overloaded, that'swhy we have ```git reset```, ```git revert```, ```git switch```, which we can also perform with ```git checkout```
 
 ### FAQs
 **What is inside *.git* folder?**
