@@ -122,6 +122,39 @@ In this type of merge, we merge branches, where one branch is just an extension 
 * If you encoutner any conflicts in merge commits, then go the conflicted file and edit is as per your need, whether you want to keep the changes from the current branch, or the other branch or want to keep the content from both the branches. Then after editting, make a commit with ```git commit -am "merge commit message"``` and git will create a new commit, with the merged content.
 
 ## 5. Comparing changes with Git Diff
+* We can use the ```git diff``` command to view changes between commits, branches, files in our working directory and more.
+* We often use ````git diff``` alogside commands like git status andgit log, to get a better picture of a repository and how it has changes over time.
+* Generally git diff compares the same file, **the file structure at the time of last commit** and **the file structure present now in the working directory**. We can also differentiate different files.
+
+* Now after running ```git diff```, you will see number of entries, comparing files, which can be like.
+```diff --git a/rainbow.txt b/rainbow.txt
+index 78d1d5a..f2c8117 100644
+--- a/rainbow.txt
++++ b/rainbow.txt
+
+// git does not show 1000s editted lines in the git diff, instead of that it shows the edits in chunks, and edits are denoted by the chunk header which starts and ends with @@.
+// this says 4 lines were extracted starting from line number 3 and 5 lines were extracted starting from line number 3, followed by the preview, and from the next line, shows the changed text.
+@@ -3,4 +3,5 @@ orange
+yellow
+green
+blue
+-purple
++indigo
++violet
+```
+
+**```git diff``` shows unstaged changes.**
+
+* ```git diff HEAD```: It lists out all the changes in the working tree since last commit. That includes staged and unstaged changes.
+
+* ```git diff --staged``` or ```git diff --cached```: It lists out the changes between the staging area and our last commit.
+
+* ```git diff HEAD <file_name>```: It lists out the changes of a specific file since the last commit
+* ```git diff --staged <file_name>```: It lists out the changes of a specific file from the staging area.
+
+* ```git diff <branch_1> <branch_2>: Differentiates between the tips of the branch1 and branch2.
+
+
 
 ### FAQs
 **What is inside *.git* folder?**
