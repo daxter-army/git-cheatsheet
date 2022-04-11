@@ -193,7 +193,7 @@ blue
 
 * In ideal cases, the HEAD pointer never points to a commit, but when it does, then that state is called **Detached HEAD state**.
 <p align='center'>
-<img src="./detached_head" alt="branches" width="60%"/>
+<img src="./detached_head.svg" alt="branches" width="60%"/>
 </p>
 
 * So it is not normal, but is it good or bad?
@@ -233,6 +233,10 @@ blue
 |It actually moves the bracnh pointer backwards, eliminating commits|It creates a brand new commit which reverses/undos the changes from a commit, because it results in a new commit, you will be prompted to enter a commit message.|
 |It deletes the commit history|It preserves the commit history|
 |You can prefer this when you are working on a project individually|You should prefer this when you are working with a team, like at your work.|
+<p align='center'>
+<img src="./git_reset.svg" alt="branches" width="60%"/>
+<img src="./git_revert.svg" alt="branches" width="70%"/>
+</p>
 
 * ```git revert <commit_hash>```:
 
