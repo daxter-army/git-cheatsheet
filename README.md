@@ -233,12 +233,22 @@ blue
 |It actually moves the bracnh pointer backwards, eliminating commits|It creates a brand new commit which reverses/undos the changes from a commit, because it results in a new commit, you will be prompted to enter a commit message.|
 |It deletes the commit history|It preserves the commit history|
 |You can prefer this when you are working on a project individually|You should prefer this when you are working with a team, like at your work.|
+
+* What ```git reset``` does
 <p align='center'>
 <img src="./git_reset.svg" alt="branches" width="60%"/>
-<img src="./git_revert.svg" alt="branches" width="70%"/>
 </p>
 
-* ```git revert <commit_hash>```:
+* What ```git revert``` does
+<p align="center">
+<img src="./git_revert.svg" alt="branches" width="85%"/>
+</p>
+
+* ```git revert <commit_hash>```: It reverts the changes of the last commit by creating a new commit.
+
+**It can also results in conflict sometimes, like ```git merge```, so when it occurs you need to go each file and decide what to keep and what to remov, and then commit manually.**
+
+
 
 **Some devs think that checkout command is overloaded, that'swhy we have ```git reset```, ```git revert```, ```git switch```, which we can also perform with ```git checkout```
 
