@@ -196,6 +196,33 @@ blue
 <img src="./detached_head" alt="branches" width="60%"/>
 </p>
 
+* So it is not normal, but is it good or bad?
+ * Basically, we have couple of options here:
+  1. You can examine the contents of the old commit. Poke around, view the files etc.
+  2. Leave and go back to wherever you were before, i.e reattach your head, or
+   i. use ```git switch <branch_name>```, to get your HEAD pointer, pointing back to the branch pointer.
+  3. Create a new branch from there and switch to it. You can now make ans save changes, since HEAD is no longer detached.
+   i. use ```git switch -c <branch_name>``` or equivalent command to create a new branch from there, and after committing your changes you can go back to the previous branch by ```git switch <branch_name>```.
+
+##### Checkout
+* ```git checkout HEAD~1```: Restore your code to one commit before the latest commit (parent).
+* ```git checkout HEAD~2```: Restore your code to two commits before the latest commit (grandparent).
+**This also results in detached HEAD. Use ```git switch <previous_branch_name>``` or ```git switch -```, and git will automatically take you to the previous branch name.**
+
+* ```git checkout HEAD <filename1> <filename2>```: Discard your changes, to what it looked like the previous commit or use ```git checkout -- <filename> <filename>```.
+
+##### Restore
+* ```git restore <filename1> <filename2>```: umodify the changes in the repo we made, since the last commmit. **These changes are lost for permanent.**
+* ```git restore --source HEAD~1 <filename>``` or ```git restore --source <commit_hash> <filename>```: It will restore the contents of the specified file to the state specified by the commit hash or the HEAD reference.
+**This only restores code, and do not detaches HEAD, so if you use ```git restore <filename>```, it will take you file contents the commit represented by the HEAD (or the latest commit).**
+
+* ```git restore --staged <filename1> <filename2>```: Unstage any staged files.
+
+##### Reset
+
+
+##### Revert
+
 
 **Some devs think that checkout command is overloaded, that'swhy we have ```git reset```, ```git revert```, ```git switch```, which we can also perform with ```git checkout```
 
