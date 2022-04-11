@@ -219,10 +219,22 @@ blue
 * ```git restore --staged <filename1> <filename2>```: Unstage any staged files.
 
 ##### Reset
+* ```git reset <commit_hash>```: It will reset the repo back to a specific commit. The commits are gone.It is used to delete commits. **It only deletes the commit however the code changes are still there in your working project, which can help you if you want to make commit in another branch but accidently committed in another branch**. If you also want to delete the associated changes, then the command is used.
 
+* ```git reset --hard HEAD~1``` or ```git reset --har d <commit_hash>```: It will delete the last commit and associated changes.
+
+**All changes are done in the current branch.**
 
 ##### Revert
+* **git revert** is similar to **git reset**, but they both achieve this in different manner.
 
+|```git reset```|```git revert```|
+|---------------|----------------|
+|It actually moves the bracnh pointer backwards, eliminating commits|It creates a brand new commit which reverses/undos the changes from a commit, because it results in a new commit, you will be prompted to enter a commit message.|
+|It deletes the commit history|It preserves the commit history|
+|You can prefer this when you are working on a project individually|You should prefer this when you are working with a team, like at your work.|
+
+* ```git revert <commit_hash>```:
 
 **Some devs think that checkout command is overloaded, that'swhy we have ```git reset```, ```git revert```, ```git switch```, which we can also perform with ```git checkout```
 
