@@ -250,7 +250,7 @@ blue
 
 
 
-**Some devs think that checkout command is overloaded, that'swhy we have ```git reset```, ```git revert```, ```git switch```, which we can also perform with ```git checkout```
+**Some devs think that checkout command is overloaded, that'swhy we have ```git reset```, ```git revert```, ```git switch```, which we can also perform with ```git checkout```.**
 
 ### FAQs
 **What is inside *.git* folder?**
