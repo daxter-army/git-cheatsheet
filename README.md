@@ -156,7 +156,7 @@ blue
 
 * ```git diff <commit_hash_1> <commit_hash_2>``` or ```git diff <commit_hash_1>..<commit_hash_2>```: Differentiates between 2 different commits.
 
-## 5. Git Stash
+## 6. Git Stash
 * Git Stash lets you save your code in the git without making any commits.
 
 **SCENARIO:**
@@ -179,7 +179,7 @@ blue
 
 * ```git stash clear```: clear the stack of stashes completely.
 
-## 6. Undoing changes and Time Travelling
+## 7. Undoing changes and Time Travelling
 
 #### Going back to a specific commit
 * ```git checkout <commit_hash>```: It is equivalent to time travelling, we are jumping back to that state of code. Git log is also restored with respect to that timeline, but this also results in **DETACHED HEAD**.
@@ -247,9 +247,23 @@ blue
 
 **It can also results in conflict sometimes, like ```git merge```, so when it occurs you need to go each file and decide what to keep and what to remov, and then commit manually.**
 
-
-
 **Some devs think that checkout command is overloaded, that'swhy we have ```git reset```, ```git revert```, ```git switch```, which we can also perform with ```git checkout```.**
+
+## 8.Git with Github Basics
+* **Remote**: The destinations on the internet where we send our code like github repo, gitlab repo etc are called remotes in git. Before pusshing code to remote, we need to tell git about our remote.
+
+* ```git remote```: Gives a list of remote associated with your git repo.
+* ```git remote -v```: Gives a list of remote associated with your git repo, with fetch and push links.  
+* ```git remote add <name> <url>```: Adds a new remote. A Classic example is ```git remote add origin https://github.com/daxter-army/git-cheatsheet.git```. **origin** is the name that is set to this remote, however you can change it if you want to.
+
+* ```git remote rename <old_name> <new_name>```: Rename the remote.
+* ```git remote remove <name>```: Delete the remote.
+* ```git push <remote_name> <branch_name>```: Push to the desired remote in the desired branch.
+* ```git push -u <remote_name> <branch_name>```: .
+
+**While pushing to a branch, it is not necessary to be on that specific branch. You can push to any branch, from any branch.**
+
+## 9 Fetching and Pulling
 
 ### FAQs
 **What is inside *.git* folder?**
