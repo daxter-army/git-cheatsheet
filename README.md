@@ -284,8 +284,14 @@ blue
 #### Fetch v/s Pull
 <p align="center"><img src="./fetchPull2.png" width="80%" /></p>
 
+#### Git Fetch
+
+**Working of ```git fetch```**
+
 * ```git fetch <remote>``` or ```git fetch <remote_name> <branch_name>```: It fetches the changes from the remote, on your local machine, but the changes are not integrated in your working directory. The first command fetches all branches whereas the second one only fetches a specified branch.
 
+#### Git Pull
+ 
 ### FAQs
 **What is inside *.git* folder?**
 * It contains dirs like config, description, HEAD, hooks etc, contains everything from log files to remote address, which helps git to work.
