@@ -97,10 +97,10 @@ In this type of merge, we merge branches, where one branch is just an extension 
 
 **SCENARIO**
 * So let's assume, we just finished work on our new branch, and we want the ```new_ui``` to be merged in the master/main branch. So now our git structure is like this.
-<p align='center'><img src="./merge2.svg" width="50%" /></p>
+<p align='center'><img src="./merge1.svg" width="50%" /></p>
 
 * Because we want our changes in the main/master branch, so lets switch into masin/master by hitting ```git switch main``` or ```git checkout main```. After doing this, our HEAD location is like this.
-<p align='center'><img src="./merge1.svg" width="50%"/></p>
+<p align='center'><img src="./merge2.svg" width="50%"/></p>
 
 * And now the final step, ```git merge new_ui```, after which git structure is like this.
 <p align='center'><img src="./merge3.svg" width="50%"/></p>
