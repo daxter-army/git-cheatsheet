@@ -264,6 +264,8 @@ blue
 **While pushing to a branch, it is not necessary to be on that specific branch. You can push to any branch, from any branch.**
 
 ## 9 Fetching and Pulling
+* 
+* ``````
 
 ### FAQs
 **What is inside *.git* folder?**
