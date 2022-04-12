@@ -187,9 +187,8 @@ blue
 #### What is DETACHED HEAD ?
 * So normally what happens, the HEAD pointer refers to a branch pointer, and the branch pointer is refering to a specific commit.
 <p align='center'>
-<img src="./git_head_and_branch_head.gif" alt="branches" width="60%"/>
+<img src="./branches_animation.gif" alt="branches" width="60%"/>
 </p>
-
 
 * In ideal cases, the HEAD pointer never points to a commit, but when it does, then that state is called **Detached HEAD state**.
 <p align='center'>
