@@ -110,7 +110,7 @@ In this type of merge, we merge branches, where one branch is just an extension 
 
 **SCENARIO**
 * So let's assume, we just finished work on our new branch, and we want the ```new_ui``` to be merged in the master/main branch. So now our git structure is like this.
-<p align='center'><img src="./merge1.svg" width="50%"/></p>
+<p align='center'><img src="./merge2.svg" width="50%"/></p>
 
 * But the ```main/master``` branch has another commits that, our ```new_ui``` is unaware and ```new_ui``` has commits that ```main/master``` is unaware of.
 <p align='center'><img src="./merge4.svg" width="50%"/></p>
