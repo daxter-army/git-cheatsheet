@@ -282,7 +282,7 @@ blue
 * To get your desired branch on your local machine, you can ```git checkout dogs```, it will do the work, but will also detach HEAD, and that's not what we want, so what we can do, we can do ```git switch dogs```, and now that origin/dogs, will start tracking our remote branch and our branch is also downloaded on our local machine, ready to be worked on. Equivalent command is ```git checkout --track origin/dogs```, and after doing changes you can push by ```git push origin dogs``` (after ```git add``` and ```git commit```).
 
 #### Fetch v/s Pull
-<p align="center"><img src="./fetch_and_pull2.svg" width="80%" /></p>
+<p align="center"><img src="./fetchPull2.svg" width="80%" /></p>
 
 * ```git fetch <remote>``` or ```git fetch <remote_name> <branch_name>```: It fetches the changes from the remote, on your local machine, but the changes are not integrated in your working directory. The first command fetches all branches whereas the second one only fetches a specified branch.
 
