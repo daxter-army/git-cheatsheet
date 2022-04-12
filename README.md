@@ -47,7 +47,7 @@
 **Git HEAD:** It is a pointer, which tells us our current position, on which commit we are.
 **Branch HEAD** It points to the branches in the git tree, where we left off at the latest commit. It serves as references when we want to merge/checkout branches.
 <p align='center'>
-<img src="./git_head_and_branch_head.gif" alt="branches" width="60%"/>
+<img src="./branches_animation.gif" alt="branches" width="60%"/>
 </p>
 
 * ```git branch``` : shows all the branches in the project.
