@@ -113,10 +113,10 @@ In this type of merge, we merge branches, where one branch is just an extension 
 <p align='center'><img src="./merge2.svg" width="50%"/></p>
 
 * But the ```main/master``` branch has another commits that, our ```new_ui``` is unaware and ```new_ui``` has commits that ```main/master``` is unaware of.
-<p align='center'><img src="./merge4.svg" width="50%"/></p>
+<p align='center'><img src="./merge10.svg" width="50%"/></p>
 
 * So here, we will use ```git merge new_ui -m "merge commit message"``` or only ```git merge new_ui``` and git will open the code editor for us to enter commit message, and after this a new commit is made which consists of both the changes from our both the branches.
-<p align='center'><img src="./merge5.svg" width="50%"/></p>
+<p align='center'><img src="./merge9.svg" width="50%"/></p>
 
 **CONFLICT in Merge Commits**
 * If you encoutner any conflicts in merge commits, then go the conflicted file and edit is as per your need, whether you want to keep the changes from the current branch, or the other branch or want to keep the content from both the branches. Then after editting, make a commit with ```git commit -am "merge commit message"``` and git will create a new commit, with the merged content.
