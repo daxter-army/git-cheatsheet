@@ -264,8 +264,27 @@ blue
 **While pushing to a branch, it is not necessary to be on that specific branch. You can push to any branch, from any branch.**
 
 ## 9 Fetching and Pulling
-* 
-* ``````
+#### Remote Tracking of Repositories
+<p align='center'><img src="./fetch_and_pull.svg" /></p>
+
+* **Before Pulling:** So the Github remote repo has some commits and the branch pointer is pointing to the last commit.
+* **After Pulling:** All the project alongwith git info is downloaded on your local PC, which has the branch pointer that points to the last commit, and there is on more thing, or we can say another pointer that refers to the commit at which, the last time you communicated with the remote repository, and it always follow this pattern ```<remote_name>/<branch_name>```. Inshort, it is a reference to the master repo state at which the repo was downloaded on the PC.
+
+**As we can checkout to other commits, we can also checkout to this commit, to which ```origin/main``` is referring to with ```git checkout origin/main```, we can see the what was the repo was like, when it was cloned on this computer. This will result in detached HEAD.**
+
+* ```git branch -r```: To see the remote branches our local repo knows about.
+
+#### Working with remote branches
+* Whenever you clone any repo, It downloads your project, all the git info, but only the default branch is downloaded on your local machine, i.e If you are having 4 branches like master, dogs, cats, lions on your remote repo, only main (If that is your default branch), is downloaded on your local machine.
+
+* As we know *origin/master* tracks the remote *master* branch on github. Your local branch knows about origin/master, origin/dogs, origin/cats, origin/lions, but it do not has that connection, they are not tracking their respective branches from your local machine yet. If you run ```git branch```, on this moment you will only see your default branch, but if you run ```git branch -r```, you will see that our repo knows about that remote branches, but they are not yet available on your local machine.
+
+* To get your desired branch on your local machine, you can ```git checkout dogs```, it will do the work, but will also detach HEAD, and that's not what we want, so what we can do, we can do ```git switch dogs```, and now that origin/dogs, will start tracking our remote branch and our branch is also downloaded on our local machine, ready to be worked on. Equivalent command is ```git checkout --track origin/dogs```, and after doing changes you can push by ```git push origin dogs``` (after ```git add``` and ```git commit```).
+
+#### Fetch v/s Pull
+<p align="center"><img src="./fetch_and_pull2.svg" width="80%" /></p>
+
+* ```git fetch <remote>``` or ```git fetch <remote_name> <branch_name>```: It fetches the changes from the remote, on your local machine, but the changes are not integrated in your working directory. The first command fetches all branches whereas the second one only fetches a specified branch.
 
 ### FAQs
 **What is inside *.git* folder?**
