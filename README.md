@@ -123,7 +123,7 @@ In this type of merge, we merge branches, where one branch is just an extension 
 
 ## 5. Comparing changes with Git Diff
 * We can use the ```git diff``` command to view changes between commits, branches, files in our working directory and more.
-* We often use ````git diff``` alogside commands like git status andgit log, to get a better picture of a repository and how it has changes over time.
+* We often use ```git diff``` alogside commands like git status andgit log, to get a better picture of a repository and how it has changes over time.
 * Generally git diff compares the same file, **the file structure at the time of last commit** and **the file structure present now in the working directory**. We can also differentiate different files.
 
 * Now after running ```git diff```, you will see number of entries, comparing files, which can be like.
