@@ -265,7 +265,7 @@ blue
 
 ## 9 Fetching and Pulling
 #### Remote Tracking of Repositories
-<p align='center'><img src="./fetch_and_pull.svg" /></p>
+<p align='center'><img src="./fetch_and_pull.svg" width="80%"/></p>
 
 * **Before Pulling:** So the Github remote repo has some commits and the branch pointer is pointing to the last commit.
 * **After Pulling:** All the project alongwith git info is downloaded on your local PC, which has the branch pointer that points to the last commit, and there is on more thing, or we can say another pointer that refers to the commit at which, the last time you communicated with the remote repository, and it always follow this pattern ```<remote_name>/<branch_name>```. Inshort, it is a reference to the master repo state at which the repo was downloaded on the PC.
