@@ -291,7 +291,22 @@ blue
 * ```git fetch <remote>``` or ```git fetch <remote_name> <branch_name>```: It fetches the changes from the remote, on your local machine, but the changes are not integrated in your working directory. The first command fetches all branches whereas the second one only fetches a specified branch.
 
 #### Git Pull
- 
+* We all know about git pull, it downloads data from Github and immediately updates our local repo with the downloaded changes. We can it is like ```git pull = git fetch (update the remote tracking branch with the latest changes from the remote repo) + git merge (update my current branch with whatever changes are on the remote tracking branch)```.
+
+* ```git pull <remote_name> <branch_name>```: It fetches the new changes from the specifies remote and merge the changes in the branch. e.g ```git pull origin master```. And just like normal merge, it can also result in merge conflicts, which are again are required to be solved manually and then commit manually.
+
+<!-- Content skipped -->
+
+#### Git Rebase
+* It is the scariest command in git, beacause it rewrites your commit history.It is also very opinionated, some people use it everyday, and some people try not to use it.
+
+* There are 2 main ways to use the ```git rebase``` command:
+  - As an alternative to merging
+  - As a cleanup tool
+
+#### Using it to merge your code
+**SCENARIO**
+
 ### FAQs
 **What is inside *.git* folder?**
 * It contains dirs like config, description, HEAD, hooks etc, contains everything from log files to remote address, which helps git to work.
