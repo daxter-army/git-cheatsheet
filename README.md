@@ -301,7 +301,7 @@ blue
 * It is the scariest command in git, beacause it rewrites your commit history.It is also very opinionated, some people use it everyday, and some people try not to use it.
 
 <p align="center">
- <img src="./before_rebasing.svg" alt="before_merge" width="60%"/>
+ <img src="./before_rebasing.svg" alt="before_merge" width="50%"/>
 </p>
 <p align="center">
  <img src="./after_rebasing.svg" alt="after_merge" width="80%"/>
