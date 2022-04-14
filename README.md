@@ -298,26 +298,35 @@ blue
 <!-- Content skipped -->
 
 #### Git Rebase
-* It is the scariest command in git, beacause it rewrites your commit history.It is also very opinionated, some people use it everyday, and some people try not to use it.
+* It is the scariest command in git, beacause it rewrites your commit history. It is also very opinionated, some people use it everyday, and some people try not to use it.
 
-<p align="center">
- <img src="./before_rebasing.svg" alt="before_merge" width="50%"/>
-</p>
-<p align="center">
- <img src="./after_rebasing.svg" alt="after_merge" width="80%"/>
-</p>
 
-<!-- another scenario -->
-<p align="center">
- <img src="./before_rebasing_1.svg" alt="before_merge" width="80%"/>
-</p>
-<p align="center">
- <img src="./after_rebasing.svg" alt="after_merge" width="80%"/>
-</p>
 
 * There are 2 main ways to use the ```git rebase``` command:
-  - As an alternative to merging
-  - As a cleanup tool
+  - **As an alternative to merging**
+
+   <p align="center">
+    <img src="./before_rebasing.svg" alt="before_merge" width="50%"/>
+   </p>
+   <p align="center">
+    <img src="./after_rebasing.svg" alt="after_merge" width="80%"/>
+   </p>
+
+   <p align="center">
+    <img src="./before_rebasing_1.svg" alt="before_merge" width="80%"/>
+   </p>
+   <p align="center">
+    <img src="./after_rebasing.svg" alt="after_merge" width="80%"/>
+   </p>
+   
+  - **As a cleanup tool**
+
+**The Golden Rule, when not to REBASE!**
+* Imagine that you are seeing your favourite opensource project on github, you want to study it and see how it is working, but there are 100s of commits in the branches, and the commit history is way more cluttered. So in this case you can rebase onto the master branch. It allows you study it in more sequential way, and if someone is reviewing your code, it makes easy for other people to review your code.
+
+* But because rebase, alters commit history, it rewrites it, then you do not want to rebase the commits that have been shared with others. If you have already pushed commits up to Github, do not rebase them unless you are positive no one on the team is using those commits. Because suppose, you pushed up some branch on github, and your teammates pull down those commits and after that you rebase your commits, you rewrite the the history, then this could be really really annoying to reconcile when your collaborators have different histories. Therefore, **never rebase those commits that you have shared with others.** Well there are ways of fixing this, but that is not fun.
+
+
 
 #### Using it to merge your code
 **SCENARIO**
