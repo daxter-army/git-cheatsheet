@@ -309,7 +309,7 @@ blue
 
 <!-- another scenario -->
 <p align="center">
- <img src="./before_rebasing_1.svg" alt="before_merge" width="60%"/>
+ <img src="./before_rebasing_1.svg" alt="before_merge" width="80%"/>
 </p>
 <p align="center">
  <img src="./after_rebasing.svg" alt="after_merge" width="80%"/>
