@@ -300,8 +300,6 @@ blue
 #### Git Rebase
 * It is the scariest command in git, beacause it rewrites your commit history. It is also very opinionated, some people use it everyday, and some people try not to use it.
 
-
-
 * There are 2 main ways to use the ```git rebase``` command:
   **As an alternative to merging**
    * CASE 1: Suppose your, project is like this initially:
@@ -313,6 +311,8 @@ blue
    <p align="center">
     <img src="./after_rebasing.svg" alt="after_merge" width="80%"/>
    </p>
+   
+      **You can also ```rebase``` incremently, as we do use ```merge``` command here**
 
   * CASE 2: Suppose your are working on ```new_ui``` branch, and your teammate is working on the ```master``` branch. You are working on new_ui and you also have need to be constantly in sync with the master branch, so what would you do? Whenever there is a commit in the master branch, you will have to merge, the changes from master branch, into your own new_ui branch, which can be tedious, because you would have to merge each and every time, and if you are working with a team in a company, there will be so many merge commits in your commit history, which will pollute your branch history, which is supposed to keep track of the changes of this repo only, but there are merge commits in between, which makes the commit history of ```new_ui``` dirty and hard to read and debug.
 
@@ -321,25 +321,104 @@ blue
     <img src="./before_rebasing_1.svg" alt="before_merge" width="80%"/>
    </p>
    
-   So instead of stopping by each and everytime, to merge the new master changes into your branch, what you can do is, you can use, ```git rebase master```, to rebase your commit on the tip of the master branch like this.
+   So instead of stopping by each and everytime, to merge the new master changes into your branch, what you can do is, you can use, ```git rebase master```, to rebase your branch on the tip of the master branch like this.
    
    <p align="center">
     <img src="./after_rebasing.svg" alt="after_merge" width="80%"/>
    </p>
-   
+ 
   **As a cleanup tool**
+  * Sometimeswe want to rewrite, delete rename, or even reorder commits (before sharing them). These things are can be done with ```git rebase```. This only subjects to the current branch in which you are present now.
+  * **Interactive Rebasing**: So there are number of operations that are supported by ```git rebase -i HEAD~<number_of_commits_you_want_edit>```. Here ```-i``` stands for interactive. Basically it allows us to review the past commits, and as per our need we can squash (combining commits), reword (edit commit message), delete commits. In the interactive mode, git opens the editor, and in the editor we can use corresponding action to perform on commits. ```pick```, ```reword```, ```edit```, ```squash```, ```fixup``` etc to perform to keep commit, edit commit message, ammend the commit, combine the commits (commit message of the commit being squashed is also preserved), combine commmit (only use the commit message of the latest commit).
 
 **The Golden Rule, when not to REBASE!**
 * Imagine that you are seeing your favourite opensource project on github, you want to study it and see how it is working, but there are 100s of commits in the branches, and the commit history is way more cluttered. So in this case you can rebase onto the master branch. It allows you study it in more sequential way, and if someone is reviewing your code, it makes easy for other people to review your code.
 
 * But because rebase, alters commit history, it rewrites it, then you do not want to rebase the commits that have been shared with others. If you have already pushed commits up to Github, do not rebase them unless you are positive no one on the team is using those commits. Because suppose, you pushed up some branch on github, and your teammates pull down those commits and after that you rebase your commits, you rewrite the the history, then this could be really really annoying to reconcile when your collaborators have different histories. Therefore, **never rebase those commits that you have shared with others.** Well there are ways of fixing this, but that is not fun.
 
+## 10. Marking the important moments in history with Git Tags
+* You can use git tags to mark specific commits in the history. They are mostly used to masrk releases in projects (v4.1.0, v4.1.1 etc). Think of it like a sticky note a commit, to remember it. There are 2 different types of tags **Lightweight Tags** and **Annotated Tags**.
 
+**Lightweight tags**: They are just a name/label that points to a particular commit.
+**Annotated tags**: They can store little extra data including the author's name, email, date and a tagging message (like a commit message).
 
-#### Using it to merge your code
-**SCENARIO**
+#### Semantic Versioning
+* It is a product versioning specification, which is followed all over the world and is written as **Major.Minor.Patch**.
 
-### FAQs
+* When you launch your product initially, **the public facing version is versioned as 1.0.0**.
+* **Patch Release**: Patch releases normally do not contain new features or significant changes. They typically signify bug fixes and other changes that do not impact how the code is used. Patch release can be versioned as **1.0.1**.
+
+* **Minor Release**: It signifies new features, new functionality have been added, but the project is still backwards compatible, no breaking changes. The new functionality is optional and should not force user to rewrite their own code. e.g 1.1.0
+
+* **Major Release**: Major release signify changes that is no longer backwards compatible. Features may be removed or changed substantially. e.g 2.0.0
+
+#### Viewing Tags
+* ```git tag```: View all the tags.
+* ```git tag -l "*beta*": List all the tags, that matches the specified pattern. 
+* ```git checkout <tag_name>```: Checkout to the commit with this tag, results in detached HEAD.
+* ```git diff <tag_name_1> <tag_name_2>```: Just like comparing two files/commit, we can also diff on the basis of tags.
+
+#### Creating Tags
+**Lightweight Tags**
+* ```git tag <tag_name>```: It creates a tag referring to the commit that HEAD is referencing. First commit and then tag it.
+
+**Annotated Tags**
+* ```git tag -a <tag_name> ```: Create an annotated tag, and after hitting enter, git will open editor for you to enter description.
+* ```git tag -a <tag_name> -m "tag message"```: Create an annotated tag, with the commit message with the command.
+* ```git show <tag_name>```: Git will show you the metadata of the tag.
+
+#### Tagging Previous Commits
+* ```git tag <tag_name> <commit_hash>```: To tag a previous commit.
+* ```git tag -a <tag_name> <commit_hash>```: To tag a previous commit as an annotated tag.
+* ```git tag -f <tag_name> <commit_hash>```: Use an existing tag to point to different commit. 
+
+#### Deleting a Tag
+* ```git tag -d <tag_name>```: Delete a Tag.
+
+#### Pushing Tags
+* ```git push --tags```: By default, tags are not pushed to the remote, so to push them use this commanḍ.
+* ```git push <remote_name> <tag_name>```: To push specific tag to the desired remote.
+
+## 11. Retrieve your lost Work with ```reflogs```
+Git keeps a record of when the tips of branches and other references were updated in the repo. We can view and update these references logs using the ```git reflog``` command. As the branch pointer, HEAD pointer, remote pointers etc. move, git log their each and every action.
+
+* In ```.git/logs/HEAD```, HEAD references are stored.
+
+#### Limitations
+* Git only keeps reflogs on your local activity. They are not shared with our collaborators.
+* Reflogs also expire. Git cleans out the old entries after around 90 days, though this can be changed, but the main point is they are not permanent.
+
+#### Commands
+* The stuff you rebase, reverted,  reset are not present in ```git log```, but it is present in ```git reflog```.
+
+There are several sub-commands like delete, exists, expire, but only ```show``` is commonly used and is default subcommand.
+
+* ```git reflog show HEAD```: Show HEAD reflog file.
+* ```git reflog show <main_branch>```: Show branch reflog file. eg ```git reflog show main```.
+
+## 12. Git Alias
+* Git looks for the global config file at either *~/.gitconfig* (global file) or *~/.config/git/config* (git local project file). Any configuration variables that we change in the file be applied across all Git repos. We can also change their values from the cmd (preferred).
+
+#### Writing in global git config file
+* We need to apply aliases across all our git repos, then we should add our aliases in the **global config file** of git. To define our aliases, we can append these lines in the following manner:
+
+```bash
+[alias]
+ s = status
+ l = log
+```
+
+#### Setting from Terminal
+```git config --global alias.s status```: sets ```git s``` for ```git status```.
+```git config --global alias.s log```: sets ```git l``` for ```git log``` .
+
+**Git automatically passes arguments to the commands for which the alias we are using, therefore to use ```git commit -m "commit message"``` we can write it as ```git cm "commit message"``` and it will work the same as it is expected.**
+
+**There are many aliases used by devs to hack their git, you can also use them by copy pasting them in your git config file.**
+
+**PRO ALIAS: Use ```la = "!git config -l | grep alias | cut -c 7-"```, to get list of all your aliases, when you forget them, because their is no git command to list out your all aliases. Here ! notifies git that it is a bach command.**
+
+### Appendix
 **What is inside *.git* folder?**
 * It contains dirs like config, description, HEAD, hooks etc, contains everything from log files to remote address, which helps git to work.
 
