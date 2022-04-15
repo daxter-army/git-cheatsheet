@@ -304,17 +304,24 @@ blue
 
 * There are 2 main ways to use the ```git rebase``` command:
   - **As an alternative to merging**
-
+   CASE 1: Suppose your, project is like this initially:
    <p align="center">
     <img src="./before_rebasing.svg" alt="before_merge" width="50%"/>
    </p>
+   
+   So if you want to rebase your branch **new_ui**, onto the tip of the master, then you will type ```git rebase master```, and all the commit history is written, and the new git structure becomes like this.
    <p align="center">
     <img src="./after_rebasing.svg" alt="after_merge" width="80%"/>
    </p>
 
+  CASE 2: Suppose your are working on ```new_ui``` branch, and your teammate is working on the ```master``` branch. You are working on new_ui and you also have need to be constantly in sync with the master branch, so what would you do? Whenever there is a commit in the master branch, you will have to merge, the changes from master branch, into your own new_ui branch, which can be tedious, because you would have to merge each and every time, and if you are working with a team in a company, there will be so many merge commits in your commit history, which will pollute your branch history, which is supposed to keep track of the changes of this repo only, but there are merge commits in between, which makes the commit history of ```new_ui``` dirty and hard to read and debug.
+
+
    <p align="center">
     <img src="./before_rebasing_1.svg" alt="before_merge" width="80%"/>
    </p>
+   
+   So instead of stopping by each and everytime, to merge the new master changes into your branch, what you can do is, you can use, ```git rebase master```, to rebase your commit on the tip of the master branch like this.
    <p align="center">
     <img src="./after_rebasing.svg" alt="after_merge" width="80%"/>
    </p>
