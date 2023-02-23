@@ -179,6 +179,8 @@ blue
 
 * ```git stash clear```: clear the stack of stashes completely.
 
+* ```git stash --include-untracked -m "stash message"```: Stash including untracked files.
+
 ## 7. Undoing changes and Time Travelling
 
 #### Going back to a specific commit
